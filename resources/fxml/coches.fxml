@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="431.0" scaleShape="false" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="431.0" scaleShape="false" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MiniController">
    <top>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -29,7 +29,7 @@
    <left>
       <VBox alignment="TOP_CENTER" prefHeight="131.0" prefWidth="50.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="imgVolumen" fitHeight="29.0" fitWidth="26.0" onMouseClicked="#encederApagarLuces" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgEncender" fitHeight="29.0" fitWidth="26.0" onMouseClicked="#encederApagarLuces" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/lucesOff.png" />
                </image>
@@ -116,7 +116,7 @@
                   <Image url="@../img/coches/miniMidnightBlack.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgLuz" disable="true" fitHeight="227.0" fitWidth="505.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView fx:id="imgLuz" disable="true" fitHeight="227.0" fitWidth="505.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/autoLuz.png" />
                </image>
