@@ -1,6 +1,5 @@
 package controllers;
 
-
 import java.io.File;
 import java.net.URL;
 import java.nio.file.Paths;
@@ -15,7 +14,7 @@ import javafx.scene.input.MouseEvent;
 public class MiniController implements Initializable {
 
 	@FXML
-	private ImageView imgVolumen;
+	private ImageView imgEncender;
 
 	@FXML
 	private ImageView imgBlazingRed;
@@ -47,14 +46,33 @@ public class MiniController implements Initializable {
 	@FXML
 	private ImageView imgLuz;
 
+	private boolean encendido = false;
+	
+	/* Cambiará la imagen de la imgEnceder y mostrará la imgLuz */
 	@FXML
 	void encederApagarLuces(MouseEvent event) {
-
+		if (encendido == true) {
+			String ruta = Paths.get(".").toAbsolutePath().normalize().toString()
+					+"/resources/img/lucesOff.png";
+			File img = new File(ruta);
+			imgEncender.setImage(new Image(img.toURI().toString()));
+			imgLuz.setVisible(false);
+			encendido = false;
+			
+		} else {
+			String ruta = Paths.get(".").toAbsolutePath().normalize().toString()
+					+"/resources/img/lucesOn.png";
+			File img = new File(ruta);
+			imgEncender.setImage(new Image(img.toURI().toString()));
+			encendido = true;
+			imgLuz.setVisible(true);
+		}
+		
 	}
 
 	@FXML
 	void selectBlack(MouseEvent event) {
-		selectColor("BlazingRed");
+		selectColor("MidnightBlack");
 	}
 
 	@FXML
@@ -64,49 +82,47 @@ public class MiniController implements Initializable {
 
 	@FXML
 	void selectGray(MouseEvent event) {
-		selectColor("LapisluxuryBlue");
-	}
-
-	@FXML
-	void selectGrey(MouseEvent event) {
-		selectColor("MidnightBlack");
-	}
-
-	@FXML
-	void selectLLBlue(MouseEvent event) {
-		selectColor("MoonwalkGrey");
-	}
-
-	@FXML
-	void selectOrange(MouseEvent event) {
-		selectColor("PepperWhite");
-	}
-
-	@FXML
-	void selectRed(MouseEvent event) {
 		selectColor("ThunderGray");
 	}
 
 	@FXML
-	void selectWhite(MouseEvent event) {
+	void selectGrey(MouseEvent event) {
+		selectColor("MoonwalkGrey");
+	}
+
+	@FXML
+	void selectLLBlue(MouseEvent event) {
+		selectColor("LapisluxuryBlue");
+	}
+
+	@FXML
+	void selectOrange(MouseEvent event) {
 		selectColor("VolcaninOrange");
+	}
+
+	@FXML
+	void selectRed(MouseEvent event) {
+		selectColor("BlazingRed");
+	}
+
+	@FXML
+	void selectWhite(MouseEvent event) {
+		selectColor("PepperWhite");
 	}
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
+		imgLuz.setVisible(false);
 		
 	}
 	
+	/* Cambia el color de la imagen coche */
 	private void selectColor(String color) {
-		try {
-			String ruta = Paths.get(".").toAbsolutePath().normalize().toString()
-					+"/resources/img/coches/mini"+color+".png";
-			File img = new File(ruta);
-			imgCoche.setImage(new Image(img.toURI().toString()));
-		} catch (Exception e) {
-			System.out.println(e);
-		}
+		String ruta = Paths.get(".").toAbsolutePath().normalize().toString()
+				+"/resources/img/coches/mini"+color+".png";
+		File img = new File(ruta);
+		imgCoche.setImage(new Image(img.toURI().toString()));
 		
 	}
 
