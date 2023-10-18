@@ -6,6 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="431.0" scaleShape="false" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
@@ -28,7 +29,7 @@
    <left>
       <VBox alignment="TOP_CENTER" prefHeight="131.0" prefWidth="50.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="29.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgVolumen" fitHeight="29.0" fitWidth="26.0" onMouseClicked="#encederApagarLuces" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/lucesOff.png" />
                </image>
@@ -42,12 +43,12 @@
             <Label alignment="CENTER" contentDisplay="CENTER" style="-fx-text-fill: white;" text="Selecciona tu color favorito" />
             <HBox alignment="CENTER" prefHeight="92.0" prefWidth="600.0">
                <children>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgBlazingRed" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#selectRed" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/colores/colorBlazingRed.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgElectricBlue" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#selectEBlue" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/colores/colorElectricBlue.jpg" />
                      </image>
@@ -55,7 +56,7 @@
                         <Insets left="10.0" />
                      </HBox.margin>
                   </ImageView>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgLapisLuxuryBlue" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#selectLLBlue" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/colores/colorLapisluxuryBlue.jpg" />
                      </image>
@@ -63,7 +64,7 @@
                         <Insets left="10.0" />
                      </HBox.margin>
                   </ImageView>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgMidnightBlack" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#selectBlack" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/colores/colorMidnightBlack.jpg" />
                      </image>
@@ -71,7 +72,7 @@
                         <Insets left="10.0" />
                      </HBox.margin>
                   </ImageView>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgMoowalkGrey" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#selectGrey" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/colores/colorMoonwalkGrey.jpg" />
                      </image>
@@ -79,7 +80,7 @@
                         <Insets left="10.0" />
                      </HBox.margin>
                   </ImageView>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgPepperWhite" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#selectWhite" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/colores/colorPepperWhite.jpg" />
                      </image>
@@ -87,7 +88,7 @@
                         <Insets left="10.0" />
                      </HBox.margin>
                   </ImageView>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgThunderGray" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#selectGray" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/colores/colorThunderGray.jpg" />
                      </image>
@@ -95,7 +96,7 @@
                         <Insets left="10.0" />
                      </HBox.margin>
                   </ImageView>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgVolcaninOrange" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#selectOrange" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/colores/colorVolcaninOrange.jpg" />
                      </image>
@@ -108,10 +109,19 @@
       </VBox>
    </bottom>
    <center>
-      <ImageView fitHeight="229.0" fitWidth="380.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-         <image>
-            <Image url="@../img/coches/miniMidnightBlack.png" />
-         </image>
-      </ImageView>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="imgCoche" fitHeight="229.0" fitWidth="380.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/coches/miniMidnightBlack.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgLuz" disable="true" fitHeight="227.0" fitWidth="505.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../img/autoLuz.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
    </center>
 </BorderPane>
