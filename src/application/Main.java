@@ -11,7 +11,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("/fxml/coches.fxml"));
+			BorderPane root = FXMLLoader.load(getClass().getResource("/fxml/coches.fxml"));
 			Scene scene = new Scene(root,425,400);
 			primaryStage.setScene(scene);
 			primaryStage.setResizable(false);
